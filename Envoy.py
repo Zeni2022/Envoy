@@ -108,9 +108,9 @@ while(True):
             print("Logged out. Reconnecting...")
             time.sleep(random.randrange(3, 5))
             keyboard.press_and_release('enter')
-            time.sleep(random.randrange(10, 15))
+            time.sleep(random.randrange(15, 20))
             keyboard.press_and_release('enter')
-            time.sleep(random.rangerange(10, 15))
+            time.sleep(random.randrange(15, 20))
             keyboard.press_and_release('enter')
             print("Logging in...")
     
