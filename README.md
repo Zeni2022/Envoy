@@ -1,3 +1,77 @@
 # Envoy
 
 NOTE: Currently Envoy will not work if you run it while in queue. Envoy will think you have been disconnected and attempt to log you in (which will fail). I plan on updating this but for now it is unsupported.
+
+## How it works
+
+Envoy regularly takes screenshots of your screen. An analysis is done on this screenshot to figure out the current status of your connection in-game. When fully disconnected (i.e. the screen with ICC in the background and the frost dragon) it will reconnect you to the character select screen, then put you in-game. Envoy will NOT play your character or give any inputs to your computer while you are logged into the game. This is ONLY done when you are on the disconnected screen.
+
+## Instructions 
+
+In order for Envoy to work, you must have Python installed on your computer and a few Python libraries. When installing Python I would recommend you install 3.7.3, as this is the version that I developed Envoy on. It may work on future/past versions of python but I haven't tested other versions.
+
+### Download link for Python 3.7.3:
+https://www.python.org/downloads/release/python-373/
+
+With Python installed, the language Envoy runs off of is now on your PC. The last thing to do is install the proper packages that Envoy uses. These Python modules are widely distributed, none are custom made specifically for Envoy so safety is certainly not an issue. If you would like to read more about what is being done, you can do so here: https://pypi.org/project/pip/
+
+### PowerShell
+I'm going to assume most of you are on Windows for now - Open up PowerShell. To do this press the windows key, type "Windows PowerShell" and click the first app that comes up. For me, when I open PowerShell my line says
+```
+PS C:\Users\{name}>
+```
+Yours may look differently but follow accordingly, if you have questions reach out to me. We will be typing the next commands directly here. To double check that Python is installed correctly and running, type:
+```
+PS C:\Users\{name}> python
+```
+
+PowerShell should tell you that Python launched with its corresponding version, and all you will see is:
+```
+>>>
+```
+If this is the case, python is running correctly. You can type
+```
+>>>quit()
+```
+to get out of Python.
+
+### PIP
+Python PIP is the package installer for Python modules. It allows us to remotely install packages, which we will need for Envoy to work. PIP comes pre-installed on Python 3.4 and later, so you will have it after installing Python if you chose the above link, or a new version.
+
+### PIP Keyboard
+The Keyboard module allows Envoy to reconnect you once it has detected you are logged out. Installing Keyboard, and all other python modules, is very easy. On PowerShell, type
+```
+PS C:\Users\{name}> pip install keyboard
+```
+Keyboard should be successfully installed after doing this.
+
+### PIP NumPy
+NumPy is a useful library for scientific programming in Python, to install:
+```
+PS C:\Users\{name}> pip install numpy
+```
+
+### PIP scipy
+SciPy, similarly to NumPy
+```
+PS C:\Users\{name}> pip install scipy
+```
+
+### PIP Pillow
+Pillow allows Python to take screenshots of your screen for analysis. This ultimately is what allows Envoy to not need injection as other softwares use, but is risky.
+```
+PS C:\Users\{name}> pip install Pillow
+```
+
+Lastly,
+### PIP TkInter
+The tkinter package is the standard Python interface to the Tcl/Tk GUI toolkit. This allows Envoy to get the resolution size of your WoW.exe which helps Envoy know where to look.
+```
+PS C:\Users\{name}> pip install tk
+```
+
+## Using Envoy
+Now Envoy is ready to run. You need to know what directory you put Envoy in. If it went into your downloads, it is most likely in "C:\Users\{name}\Downloads\Envoy". But it could be in a different location depending on how you downloaded it. In PowerShell, cd to Envoy. I will include a picture below of what it looks like for me.
+
+### Detailed explanation of how Envoy works:
+A [sobel operator](https://en.wikipedia.org/wiki/Sobel_operator) is applied to the images for edge-detection with a custom kernel based off of the colors Blizzard uses for their log-in screen. A [Savitzky–Golay filter](https://en.wikipedia.org/wiki/Savitzky%E2%80%93Golay_filter) is applied to a linearly interpolated function mapping pixel locations to their colors after the sobel operator. Once Envoy has detected that you were disconnected from the game, it will reconnect you by pressing enter on your keyboard via the Python keyboard module.
