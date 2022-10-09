@@ -1,5 +1,6 @@
 #NOTE: This will currently NOT work if you start the program while in queue. You must be logged in to the game start the program. I will try to update this.
 import time
+import datetime
 import keyboard
 import random
 import numpy as np
@@ -7,9 +8,8 @@ from scipy.signal import convolve2d
 from scipy.signal import savgol_filter
 from PIL import ImageGrab
 from tkinter import *
-# Delete this import
 from PIL import Image as im
-#
+
 
 root = Tk()
 
@@ -105,12 +105,12 @@ while(True):
 
     if len(peaks) == 3:
         if 0.10 <= (peaks[1]-peaks[0])/len(yhat1) <= 0.14 and 0.33 <= (peaks[2]-peaks[0])/len(yhat1) <= 0.37:
-            print("Logged out. Reconnecting...")
+            print(f"Logged out at {datetime.datetime.now()}. Reconnecting...")
             time.sleep(random.randrange(3, 5))
             keyboard.press_and_release('enter')
             time.sleep(random.randrange(15, 20))
             keyboard.press_and_release('enter')
             time.sleep(random.randrange(15, 20))
             keyboard.press_and_release('enter')
-            print("Logging in...")
+            print("Entering world.")
     
