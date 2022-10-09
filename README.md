@@ -97,6 +97,9 @@ You may want to re-read the instructions at the top of this README to be sure of
 ## Terminating Envoy
 When you want to end Envoy, simply click on PowerShell so that it's your current window (the same window that you ran Envoy with) and press Ctrl-C. Ctrl-C is a keyboard interrupt for python scripts, and will end the process. You will have to run the same "python Envoy.py" command afterwards if you want to run it at a later time.
 
+![image](https://user-images.githubusercontent.com/115406246/194777305-5e452aee-c56d-4cb4-93e5-eda4d79cadef.png)
+
+
 
 ### Detailed explanation of how Envoy works:
 A [sobel operator](https://en.wikipedia.org/wiki/Sobel_operator) is applied to the images for edge-detection with a custom kernel based off of the colors Blizzard uses for their log-in screen. A [Savitzky–Golay filter](https://en.wikipedia.org/wiki/Savitzky%E2%80%93Golay_filter) is applied to a linearly interpolated function mapping pixel locations to their colors after the sobel operator. Once Envoy has detected that you were disconnected from the game based on signatures unique to the login screen, it will reconnect you by pressing enter on your keyboard via the Python keyboard module.
