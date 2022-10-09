@@ -73,5 +73,18 @@ PS C:\Users\{name}> pip install tk
 ## Using Envoy
 Now Envoy is ready to run. You need to know what directory you put Envoy in. If it went into your downloads, it is most likely in "C:\Users\{name}\Downloads\Envoy". But it could be in a different location depending on how you downloaded it. In PowerShell, cd to Envoy. I will include a picture below of what it looks like for me.
 
+![envoy-pic](https://user-images.githubusercontent.com/115406246/194773482-775508c7-924b-458b-8b87-72b3f7b96eb5.png)
+
+As you can see, my Envoy.py file is stored in C:\Users\bucky\downloads\envoy-master\envoy-master. Once I run
+```
+cd C:\Users\bucky\Downloads\envoy-master\envor-master
+```
+I am able to run
+```
+PS C:\Users\bucky\downloads\envoy-master\envoy-master> python Envoy.py
+```
+Now Envoy is running and regularly taking screenshots of your screen to check your online status.
+
+
 ### Detailed explanation of how Envoy works:
 A [sobel operator](https://en.wikipedia.org/wiki/Sobel_operator) is applied to the images for edge-detection with a custom kernel based off of the colors Blizzard uses for their log-in screen. A [Savitzky–Golay filter](https://en.wikipedia.org/wiki/Savitzky%E2%80%93Golay_filter) is applied to a linearly interpolated function mapping pixel locations to their colors after the sobel operator. Once Envoy has detected that you were disconnected from the game, it will reconnect you by pressing enter on your keyboard via the Python keyboard module.
