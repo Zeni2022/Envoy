@@ -9,6 +9,7 @@ from PIL import ImageGrab
 from tkinter import *
 # Delete this import
 from PIL import Image as im
+import matplotlib.pyplot as plt
 #
 
 root = Tk()
@@ -20,7 +21,7 @@ left = 0
 upper = int(.64*monitor_height)
 right = int(.156*monitor_width)
 lower = int(.87*monitor_height)
-print("Envoy running. You may now live your life.")
+print("Shesha running. You may now live your life.")
 run_count = 0
 
 while(True):
