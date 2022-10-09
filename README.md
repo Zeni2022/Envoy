@@ -2,11 +2,15 @@
 
 NOTE: Currently Envoy will not work if you run it while in queue. Envoy will think you have been disconnected and attempt to log you in (which will fail). I plan on updating this but for now it is unsupported.
 
-## How it works
+## How Envoy Works
 
-Envoy regularly takes screenshots of your screen. An analysis is done on this screenshot to figure out the current status of your connection in-game. When fully disconnected (i.e. the screen with ICC in the background and the frost dragon) it will reconnect you to the character select screen, then put you in-game. Envoy will NOT play your character or give any inputs to your computer while you are logged into the game. This is ONLY done when you are on the disconnected screen.
+Envoy regularly takes screenshots of your screen. An analysis is done on this screenshot to figure out the current status of your connection in-game (a more detailed explanation is at the bottom of this README if you're interested). When fully disconnected (i.e. the screen with ICC in the background and the frost dragon) it will reconnect you to the character select screen, then put you in-game. Envoy will NOT play your character or give any inputs to your computer while you are logged into the game. This is ONLY done when you are on the disconnected screen.
 
-## Instructions 
+## Usage Instructions
+
+Ultimately it's simple, but messing up a small detail could result in Envoy not working properly. Envoy does not inject into WoW like other softwares do, making it safer but more delicate. When running Envoy, WoW.exe MUST be your active window. Do not let another app be your currently active window while Envoy is running because it will interact with that window instead of WoW.exe. Make sure that WoW.exe is also on your main monitor. If you have a multiple monitor setup and you don't know which monitor is your main monitor, double-check before running Envoy. If WoW.exe is not on the main monitor Envoy will not be able to take screenshots successfully.
+
+## Installation Instructions 
 
 In order for Envoy to work, you must have Python installed on your computer and a few Python libraries. When installing Python I would recommend you install 3.7.3, as this is the version that I developed Envoy on. It may work on future/past versions of python but I haven't tested other versions.
 
@@ -44,6 +48,9 @@ The Keyboard module allows Envoy to reconnect you once it has detected you are l
 PS C:\Users\{name}> pip install keyboard
 ```
 Keyboard should be successfully installed after doing this.
+It should look like this:
+
+![image](https://user-images.githubusercontent.com/115406246/194773896-ad25b026-d095-4a76-8814-954c728299d1.png)
 
 ### PIP NumPy
 NumPy is a useful library for scientific programming in Python, to install:
@@ -51,7 +58,7 @@ NumPy is a useful library for scientific programming in Python, to install:
 PS C:\Users\{name}> pip install numpy
 ```
 
-### PIP scipy
+### PIP SciPy
 SciPy, similarly to NumPy
 ```
 PS C:\Users\{name}> pip install scipy
@@ -84,6 +91,8 @@ I am able to run
 PS C:\Users\bucky\downloads\envoy-master\envoy-master> python Envoy.py
 ```
 Now Envoy is running and regularly taking screenshots of your screen to check your online status.
+
+You may want to re-read the instructions at the top of this README to be sure of the intended use-cases for Envoy. Improper use may result in Envoy not running correctly, and ultimately not keeping you logged in.
 
 
 ### Detailed explanation of how Envoy works:
