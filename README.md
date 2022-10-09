@@ -78,7 +78,7 @@ PS C:\Users\{name}> pip install tk
 ```
 
 ## Using Envoy
-Now Envoy is ready to run. You need to know what directory you put Envoy in. If it went into your downloads, it is most likely in "C:\Users\{name}\Downloads\Envoy". But it could be in a different location depending on how you downloaded it. In PowerShell, cd to Envoy. I will include a picture below of what it looks like for me.
+Now Envoy is ready to run. You need to know what directory you put Envoy in. If it went into your downloads, it is most likely in "C:\Users\{name}\Downloads\Envoy-master/envoy-master". But it could be in a different location depending on how you downloaded it. In PowerShell, cd to Envoy. I will include a picture below of what it looks like for me.
 
 ![envoy-pic](https://user-images.githubusercontent.com/115406246/194773482-775508c7-924b-458b-8b87-72b3f7b96eb5.png)
 
