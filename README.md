@@ -52,27 +52,20 @@ It should look like this:
 
 ![image](https://user-images.githubusercontent.com/115406246/194773896-ad25b026-d095-4a76-8814-954c728299d1.png)
 
-### PIP NumPy
-NumPy is a useful library for scientific programming in Python, to install:
+Now type the following in PowerShell to install the rest of the required packages:
+
 ```
 PS C:\Users\{name}> pip install numpy
 ```
 
-### PIP SciPy
-SciPy, similarly to NumPy
 ```
 PS C:\Users\{name}> pip install scipy
 ```
 
-### PIP Pillow
-Pillow allows Python to take screenshots of your screen for analysis.
 ```
 PS C:\Users\{name}> pip install Pillow
 ```
 
-Lastly,
-### PIP TkInter
-The tkinter package is the standard Python interface to the Tcl/Tk GUI toolkit. This allows Envoy to get the resolution size of your WoW.exe which helps Envoy know where to look.
 ```
 PS C:\Users\{name}> pip install tk
 ```
