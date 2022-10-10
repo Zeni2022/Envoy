@@ -50,12 +50,13 @@ PS C:\Users\{name}> pip install keyboard numpy scipy Pillow tk
 Keyboard should be successfully installed after doing this.
 It should look like this:
 
-![image](https://user-images.githubusercontent.com/115406246/194773896-ad25b026-d095-4a76-8814-954c728299d1.png)
+![Untitled](https://user-images.githubusercontent.com/115406246/194914147-6d7ccf5e-b005-41df-a359-051c3d7032bd.png)
+
 
 ## Using Envoy
 Now Envoy is ready to run. You need to know what directory you put Envoy in. If it went into your downloads, it is most likely in "C:\Users\{name}\Downloads\Envoy-master\envoy-master". But it could be in a different location depending on how you downloaded it. In PowerShell, cd to Envoy. I will include a picture below of what it looks like for me.
 
-![envoy-pic](https://user-images.githubusercontent.com/115406246/194773482-775508c7-924b-458b-8b87-72b3f7b96eb5.png)
+![Untitled](https://user-images.githubusercontent.com/115406246/194914470-a402f198-c55e-47b6-80fe-6270e12c5286.png)
 
 As you can see, my Envoy.py file is stored in C:\Users\bucky\downloads\envoy-master\envoy-master. Once I run
 ```
