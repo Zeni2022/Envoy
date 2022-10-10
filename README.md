@@ -52,7 +52,7 @@ It should look like this:
 
 ![image](https://user-images.githubusercontent.com/115406246/194773896-ad25b026-d095-4a76-8814-954c728299d1.png)
 
-Now type the following INDIVIDUALLY in PowerShell to install the rest of the required packages:
+Now type the following **INDIVIDUALLY** in PowerShell to install the rest of the required packages:
 
 ```
 PS C:\Users\{name}> pip install numpy
