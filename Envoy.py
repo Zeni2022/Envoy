@@ -97,20 +97,28 @@ while(True):
 
     rm_peaks = []
     for p in range(1, len(peaks)):
-        if peaks[p] - peaks[p-1] < 2:
+        if peaks[p] - peaks[p-1] < 3:
             rm_peaks.append(peaks[p])
 
     for peak in rm_peaks:
         peaks.remove(peak)
 
+    rm_peaks = []
+    for peak in peaks:
+        if peak < .1*(lower-upper):
+            rm_peaks.append(peak)
+            
+    for peak in rm_peaks:
+        peaks.remove(peak)
+
     if len(peaks) == 3:
-        if 0.10 <= (peaks[1]-peaks[0])/len(yhat1) <= 0.14 and 0.33 <= (peaks[2]-peaks[0])/len(yhat1) <= 0.37:
-            print(f"Logged out at {datetime.datetime.now()}. Reconnecting...")
-            time.sleep(random.randrange(3, 5))
-            keyboard.press_and_release('enter')
-            time.sleep(random.randrange(15, 20))
-            keyboard.press_and_release('enter')
-            time.sleep(random.randrange(15, 20))
-            keyboard.press_and_release('enter')
-            print("Entering world.")
+        #if 0.10 <= (peaks[1]-peaks[0])/len(yhat1) <= 0.14 and 0.33 <= (peaks[2]-peaks[0])/len(yhat1) <= 0.37:
+        print(f"Logged out at {datetime.datetime.now()}. Reconnecting...")
+        time.sleep(random.randrange(3, 5))
+        keyboard.press_and_release('enter')
+        time.sleep(random.randrange(15, 20))
+        keyboard.press_and_release('enter')
+        time.sleep(random.randrange(15, 20))
+        keyboard.press_and_release('enter')
+        print("Entering world.")
     
