@@ -42,33 +42,15 @@ to get out of Python.
 ### PIP
 Python PIP is the package installer for Python modules. It allows us to remotely install packages, which we will need for Envoy to work. PIP comes pre-installed on Python 3.4 and later, so you will have it after installing Python if you chose the above link, or a new version.
 
-### PIP Keyboard
-The Keyboard module allows Envoy to reconnect you once it has detected you are logged out. Installing Keyboard, and all other python modules, is very easy. On PowerShell, type
+### Python modules
+Installing all of the required modules can be done with one line in PowerShell:
 ```
-PS C:\Users\{name}> pip install keyboard
+PS C:\Users\{name}> pip install keyboard numpy scipy Pillow tk
 ```
 Keyboard should be successfully installed after doing this.
 It should look like this:
 
 ![image](https://user-images.githubusercontent.com/115406246/194773896-ad25b026-d095-4a76-8814-954c728299d1.png)
-
-Now type the following **INDIVIDUALLY** in PowerShell to install the rest of the required packages:
-
-```
-PS C:\Users\{name}> pip install numpy
-```
-
-```
-PS C:\Users\{name}> pip install scipy
-```
-
-```
-PS C:\Users\{name}> pip install Pillow
-```
-
-```
-PS C:\Users\{name}> pip install tk
-```
 
 ## Using Envoy
 Now Envoy is ready to run. You need to know what directory you put Envoy in. If it went into your downloads, it is most likely in "C:\Users\{name}\Downloads\Envoy-master\envoy-master". But it could be in a different location depending on how you downloaded it. In PowerShell, cd to Envoy. I will include a picture below of what it looks like for me.
