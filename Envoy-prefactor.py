@@ -16,10 +16,10 @@ root = Tk()
 monitor_height = root.winfo_screenheight()
 monitor_width = root.winfo_screenwidth()
 
-left = int(.3*monitor_width)
-upper = int(.91*monitor_height)
-right = int(.7*monitor_width)
-lower = int(.98*monitor_height)
+left = 0
+upper = int(.64*monitor_height)
+right = int(.156*monitor_width)
+lower = int(.87*monitor_height)
 print("Envoy running. You may now live your life.")
 run_count = 0
 
@@ -28,16 +28,15 @@ while(True):
     sleep_time = random.randrange(10, 15)
     time.sleep(sleep_time)
     screen = ImageGrab.grab(bbox=(left, upper, right, lower), all_screens=False)
-    #screen.show()
     matrix = np.asarray(screen)
 
     bm = matrix.copy()
     for ij in np.ndindex(bm.shape[:2]):
-        # Find the scalar magnitude of the current pixel from yellow.
-        bmag = np.sqrt((bm[ij][0] - 255)**2 + (bm[ij][1] - 199)**2 + (bm[ij][2])**2)
-        # Normalize the magnitude so that values of 0 go to black, and values of 412 (the maximum magnitude) go to white.
-        color = ((412-bmag)/412)*255
-        if color < 220:
+        # Find the scalar magnitude of the current pixel from blue.
+        bmag = np.sqrt((bm[ij][0] - 24)**2 + (bm[ij][1] - 84)**2 + (bm[ij][2] - 139)**2)
+        # Normalize the magnitude so that values of 0 go to black, and values of 320 (the maximum magnitude) go to white.
+        color = 255 - ((320-bmag)/320)*255
+        if color < 180:
             color = 0
         else:
             color = 255
@@ -67,9 +66,9 @@ while(True):
     func = [[0 for i in range(lower-upper)] for j in range(3)]
 
     values = [int(right/2 - (.125*right)), int(right/2), int(right/2 + (.125*right))]
-    #for i in range(len(values)):
-        #for j in range(len(func[i])):
-            #func[i][j] = G[values[i], j]
+    for i in range(len(values)):
+        for j in range(len(func[i])):
+            func[i][j] = G[values[i], j]
 
     avg_func = func[0]
     for i in range(len(avg_func)):
@@ -112,28 +111,7 @@ while(True):
     for peak in rm_peaks:
         peaks.remove(peak)
 
-    mleft = right-left
-    mright = 0
-    mtop = lower-upper
-    mbot = 0
-
-    for ij in np.ndindex(bm.shape[:2]):
-        if bm[ij][0] == 255:
-            if ij[1] < mleft:
-                mleft = ij[1]
-            if ij[1] > mright:
-                mright = ij[1]
-            if ij[0] < mtop:
-                mtop = ij[0]
-            if ij[0] > mbot:
-                mbot = ij[0]
-
-    print((mright-mleft)/(mbot-mtop))
-    print("image width:", right-left, "image height:", lower-upper)
-    print("left:", mleft, "right:", mright, "top:", mtop, "bot:", mbot)
-    
-    
-    if 33 <= (mright-mleft)/(mbot-mtop) <= 41:
+    if len(peaks) == 3:
         #if 0.10 <= (peaks[1]-peaks[0])/len(yhat1) <= 0.14 and 0.33 <= (peaks[2]-peaks[0])/len(yhat1) <= 0.37:
         print(f"Logged out at {datetime.datetime.now()}. Reconnecting...")
         time.sleep(random.randrange(3, 5))
