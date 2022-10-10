@@ -10,14 +10,20 @@ Envoy regularly takes screenshots of your screen. An analysis is done on this sc
 
 Ultimately it's simple, but messing up a small detail could result in Envoy not working properly. Envoy does not inject into WoW like other softwares do, making it safer but more delicate. When running Envoy, WoW.exe MUST be your active window. Do not let another app be your currently active window while Envoy is running because it will interact with that window instead of WoW.exe. Make sure that WoW.exe is also on your main monitor. If you have a multiple monitor setup and you don't know which monitor is your main monitor, double-check before running Envoy. If WoW.exe is not on the main monitor Envoy will not be able to take screenshots successfully. Currently, the intended use for Envoy is for you to be connected and logged into WoW, WoW.exe to be full-screened on your main monitor and be the currently active window.
 
-## Installation Instructions 
+## Step 0: Download Envoy
 
-In order for Envoy to work, you must have Python installed on your computer and a few Python libraries. When installing Python I would recommend you install 3.7.3, as this is the version that I developed Envoy on. It may work on future/past versions of python but I haven't tested other versions.
+![image](https://user-images.githubusercontent.com/115406246/194967276-8da3ed4c-eae5-4535-9db5-8c2078f120f4.png)
+You can download the project by clicking the Download ZIP button. You will have to unzip this project in a location that you will remember for later. Putting it in downloads is a convenient spot.
 
-### Download link for Python 3.7.3:
-https://www.python.org/downloads/release/python-373/
+## Step 1: Install Python
 
-With Python installed, the language Envoy runs off of is now on your PC. The last thing to do is install the proper packages that Envoy uses. These Python modules are widely distributed, none are custom made specifically for Envoy so safety is certainly not an issue. If you would like to read more about what is being done, you can do so here: https://pypi.org/project/pip/
+![image](https://user-images.githubusercontent.com/115406246/194968021-5e9b22bc-52ca-4fd1-83f2-0921aedbf6b0.png)
+
+In order for Envoy to work, you must have Python installed on your computer and a few Python libraries. When installing Python I would recommend using the Microsoft Store (it's free). Just hit the windows key and type "Microsoft Store". Click the first option and type "python". Click "Get" and you should be good to go.
+
+![image](https://user-images.githubusercontent.com/115406246/194968572-98d94211-69d7-4843-9562-30c8e8e2a513.png)
+
+With Python installed, the language Envoy runs off of is now on your PC. The last thing to do is install the proper packages that Envoy uses. These Python modules are widely distributed.
 
 ### PowerShell
 I'm going to assume most of you are on Windows for now - Open up PowerShell. To do this press the windows key, type "Windows PowerShell" and click the first app that comes up. For me, when I open PowerShell my line says
@@ -39,7 +45,11 @@ If this is the case, python is running correctly. You can type
 ```
 to get out of Python.
 
-### PIP
+![image](https://user-images.githubusercontent.com/115406246/194968847-3142b29c-e42a-4865-aeaf-52daea9eb909.png)
+
+If you are able to follow this with the same output, you're good to go.
+
+## PIP
 Python PIP is the package installer for Python modules. It allows us to remotely install packages, which we will need for Envoy to work. PIP comes pre-installed on Python 3.4 and later, so you will have it after installing Python if you chose the above link, or a new version.
 
 ### Python modules
