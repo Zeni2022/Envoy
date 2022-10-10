@@ -65,7 +65,7 @@ PS C:\Users\{name}> pip install scipy
 ```
 
 ### PIP Pillow
-Pillow allows Python to take screenshots of your screen for analysis. This ultimately is what allows Envoy to not need injection as other softwares use, but is risky.
+Pillow allows Python to take screenshots of your screen for analysis.
 ```
 PS C:\Users\{name}> pip install Pillow
 ```
