@@ -1,6 +1,12 @@
 # Envoy
+## Requirements
+WoW.exe in WINDOWED MODE
+MAXIMIZE WoW.exe
+Make sure WoW.exe is on your main monitor
+Make WoW.exe your current window (click on the client to ensure this)
 
-NOTE: Currently Envoy will not work if you run it while in queue. Envoy will think you have been disconnected and attempt to log you in (which will fail). I plan on updating this but for now it is unsupported. Anyone running Envoy on a monitor resolution vastly different from mine (2560x1440) may have issues. If you follow the instructions correctly and still have issues, and your monitor resolution is very different from mine, reach out to me so I can improve Envoy to run on monitors of different resolutions.
+
+NOTE: Currently Envoy will not work if you run it while in queue. Envoy will think you have been disconnected and attempt to log you in (which will fail). I plan on updating this but for now it is unsupported. 
 
 ## How Envoy Works
 
