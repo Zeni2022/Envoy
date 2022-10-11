@@ -1,8 +1,11 @@
 # Envoy
 ## Requirements
 WoW.exe in WINDOWED MODE
+
 MAXIMIZE WoW.exe
+
 Make sure WoW.exe is on your main monitor
+
 Make WoW.exe your current window (click on the client to ensure this)
 
 
