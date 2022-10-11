@@ -128,9 +128,9 @@ while(True):
             if ij[0] > mbot:
                 mbot = ij[0]
 
-    print((mright-mleft)/(mbot-mtop))
-    print("image width:", right-left, "image height:", lower-upper)
-    print("left:", mleft, "right:", mright, "top:", mtop, "bot:", mbot)
+    #print((mright-mleft)/(mbot-mtop))
+    #print("image width:", right-left, "image height:", lower-upper)
+    #print("left:", mleft, "right:", mright, "top:", mtop, "bot:", mbot)
     
     
     if 33 <= (mright-mleft)/(mbot-mtop) <= 41:
