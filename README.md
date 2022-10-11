@@ -30,7 +30,7 @@ You can download the project by clicking the Download ZIP button. You will have 
 
 In order for Envoy to work, you must have Python installed on your computer and a few Python libraries. When installing Python I would recommend using the Microsoft Store (it's free). Just hit the windows key and type "Microsoft Store". Click the first option and type "python". Click "Get" and you should be good to go.
 
-![image](https://user-images.githubusercontent.com/115406246/194968572-98d94211-69d7-4843-9562-30c8e8e2a513.png)
+![image](https://user-images.githubusercontent.com/115406246/194972657-dbdc2a4c-11bc-4686-a1ac-cd4c3773ab97.png)
 
 With Python installed, the language Envoy runs off of is now on your PC. The last thing to do is install the proper packages that Envoy uses. These Python modules are widely distributed.
 
