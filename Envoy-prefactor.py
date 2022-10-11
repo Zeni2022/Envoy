@@ -10,6 +10,7 @@ from PIL import ImageGrab
 from tkinter import *
 from PIL import Image as im
 
+print("This version of Envoy is deprecated, please run Envoy.py for the updated version instead.")
 
 root = Tk()
 
