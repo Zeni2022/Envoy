@@ -22,6 +22,7 @@ right = int(.7*monitor_width)
 lower = int(.98*monitor_height)
 print("Envoy running. You may now live your life.")
 run_count = 0
+time.sleep(random.randrange(60))
 
 while(True):
     run_count += 1
